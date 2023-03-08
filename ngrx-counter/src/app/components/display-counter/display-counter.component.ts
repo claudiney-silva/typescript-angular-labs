@@ -1,4 +1,7 @@
 import { Component, Input } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { map } from 'rxjs/operators';
+import { IAppState } from 'src/app/store/app.state';
 
 @Component({
   selector: 'app-display-counter',
@@ -7,6 +10,10 @@ import { Component, Input } from '@angular/core';
 })
 export class DisplayCounterComponent {
 
-  @Input()
-  counter?: number = 10;
+  counter$ = this.store
+    .select('app')
+    .pipe(map(e => e.counter));
+
+  constructor(private store: Store<{ app: IAppState}>) {}
+  
 }
