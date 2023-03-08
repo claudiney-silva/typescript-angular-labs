@@ -1,0 +1,15 @@
+header {
+    padding: 10px;
+    background-color: aqua;
+}
+
+header a {
+    color: grey;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px;    
+}
+
+header a:hover {
+    text-decoration: underline;
+}
