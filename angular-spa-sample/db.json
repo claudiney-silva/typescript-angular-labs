@@ -1,0 +1,7 @@
+{
+  "courses": [
+    {"id": 1, "name": "Angular", "description": "Angular course etc"},
+    {"id": 2, "name": "React", "description": "React course etc"},
+    {"id": 3, "name": "Vue", "description": "Vue course etc"}    
+  ]
+}

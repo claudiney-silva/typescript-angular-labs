@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Course } from 'src/app/models/courses';
+import { CoursesService } from 'src/app/services/courses.service';
 
 @Component({
   selector: 'app-courses',
@@ -7,16 +8,20 @@ import { Course } from 'src/app/models/courses';
   styleUrls: ['./courses.component.css']
 })
 export class CoursesComponent {
-
-  courses: Course[] = [
-    {id: 1, name: 'Angular', description: 'Angular course etc'},
-    {id: 2, name: 'React', description: 'React course etc'},
-    {id: 3, name: 'Vue', description: 'Vue course etc'}
-  ];
+  
+  courses: Course[] = [];
 
   selectedCourse?: Course;
 
+  constructor(private coursesService: CoursesService) {
+    this.getCourses();
+  }
+
   showDescription(course: Course) {
     this.selectedCourse = course;
+  }
+
+  getCourses() {
+    this.coursesService.findAll().subscribe(courses => this.courses = courses);
   }
 }
