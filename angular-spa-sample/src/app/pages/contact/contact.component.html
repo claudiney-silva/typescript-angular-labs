@@ -1,2 +1,10 @@
 <h1>Contact</h1>
-<p>contact me!</p>
+
+<p>Name: {{ realname }}</p>
+<p>E-mail: {{ email }}</p>
+
+<form>
+    <input type="text" [(ngModel)]="realname" name="realname" placeholder="Seu nome">
+    <input type="text" [(ngModel)]="email" name="email" placeholder="Seu email">
+    <button (click)="send()">Send</button>
+</form>

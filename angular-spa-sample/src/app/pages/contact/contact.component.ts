@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent {
+  realname: string = '';
+  email: string = '';
 
+  send() {
+    console.log({realname: this.realname, email: this.email});
+    this.realname = '';
+    this.email = '';
+  }
 }
