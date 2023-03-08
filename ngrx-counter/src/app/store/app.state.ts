@@ -10,6 +10,7 @@ export const appInitialState: IAppState = {
 
 export const incrementCounter = createAction('[App] Increment counter');
 export const decrementCounter = createAction('[App] Decrement counter');
+export const resetCounter = createAction('[App] Reset counter');
 
 export const appReducer = createReducer(
     appInitialState,
@@ -24,6 +25,13 @@ export const appReducer = createReducer(
         state = {
             ...state,
             counter: state.counter - 1
+        }
+        return state;
+    }),
+    on(resetCounter, (state) => {
+        state = {
+            ...state,
+            counter: 0
         }
         return state;
     })

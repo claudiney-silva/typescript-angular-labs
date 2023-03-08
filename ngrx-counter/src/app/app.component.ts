@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { map } from 'rxjs/operators';
-import { decrementCounter, IAppState, incrementCounter } from './store/app.state';
+import { decrementCounter, IAppState, incrementCounter, resetCounter } from './store/app.state';
 
 @Component({
   selector: 'app-root',
@@ -21,5 +21,9 @@ export class AppComponent {
 
   decrement() {
     this.store.dispatch(decrementCounter());
+  }
+
+  resetFromDisplay() {
+    this.store.dispatch(resetCounter());
   }
 }

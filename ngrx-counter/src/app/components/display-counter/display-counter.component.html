@@ -1,1 +1,4 @@
-<div class="counter">{{ counter$ | async }}</div>
+<div class="counter">
+    {{ counter$ | async }}
+    <button (click)="resetCounter()">Reset Counter</button>
+</div>
