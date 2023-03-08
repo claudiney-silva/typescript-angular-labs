@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { DisplayCounterComponent } from './components/display-counter/display-counter.component';
+import { StoreModule } from '@ngrx/store';
+import { appReducer } from './store/app.state';
 
 @NgModule({
   declarations: [
@@ -10,7 +12,8 @@ import { DisplayCounterComponent } from './components/display-counter/display-co
     DisplayCounterComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    StoreModule.forRoot({ app: appReducer })
   ],
   providers: [],
   bootstrap: [AppComponent]

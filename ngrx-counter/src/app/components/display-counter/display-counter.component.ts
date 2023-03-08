@@ -8,5 +8,5 @@ import { Component, Input } from '@angular/core';
 export class DisplayCounterComponent {
 
   @Input()
-  counter: number = 10;
+  counter?: number = 10;
 }

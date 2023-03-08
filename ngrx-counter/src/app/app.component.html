@@ -1,7 +1,6 @@
-<h1>NGRX Contador ({{ parentCounter }})</h1>
+<h1>NGRX Contador ({{ globalCounter$ | async }})</h1>
 
-<button (click)="parentCounter = parentCounter + 1">+</button>
-<button (click)="parentCounter = parentCounter - 1">-</button>
+<button (click)="increment()">+</button>
+<button (click)="decrement()">-</button>
 
-
-<app-display-counter [counter]="parentCounter"></app-display-counter>
+<app-display-counter [counter]="(globalCounter$ | async) || 0"></app-display-counter>
