@@ -1,0 +1,7 @@
+<h1>NGRX Contador ({{ parentCounter }})</h1>
+
+<button (click)="parentCounter = parentCounter + 1">+</button>
+<button (click)="parentCounter = parentCounter - 1">-</button>
+
+
+<app-display-counter [counter]="parentCounter"></app-display-counter>

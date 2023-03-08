@@ -1,0 +1,12 @@
+.counter {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    transform: translateX(-50%);
+    border: 2px solid green;
+    width: 20px;
+    font-size: large;
+    padding: 20px;
+    text-align: center;
+}
